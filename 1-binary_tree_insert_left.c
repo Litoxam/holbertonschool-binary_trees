@@ -21,7 +21,11 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	/* btn : binary tree node*/
 	if (parent == NULL)
 		return (NULL);
+
 	new_btn = binary_tree_node(parent, value);
+
+	if (new_btn == NULL)
+		return (NULL);
 
 	if (old_child != NULL)
 	{
@@ -33,3 +37,4 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	return (new_btn);
 
 }
+
