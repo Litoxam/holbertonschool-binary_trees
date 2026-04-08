@@ -30,6 +30,7 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 			return (NULL);
 
 	new_btn->n = value;
+	new_btn->parent = parent;
 	new_btn->left = NULL;
 
 	if (old_child != NULL)
