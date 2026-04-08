@@ -31,7 +31,7 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
 	new_btn->n = value;
 	new_btn->parent = parent;
-	new_btn->left = NULL;
+	new_btn->right = NULL;
 
 	new_btn->left = old_child;
 
