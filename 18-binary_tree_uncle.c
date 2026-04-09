@@ -27,13 +27,13 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	if (node->parent == g_parent->left)
 	{
 		if (g_parent->right == NULL)
-			return(NULL);
+			return (NULL);
 	}
 
 	if (node->parent == g_parent->right)
 {
 	if (g_parent->left == NULL)
-		return(NULL);
+		return (NULL);
 }
 
 
