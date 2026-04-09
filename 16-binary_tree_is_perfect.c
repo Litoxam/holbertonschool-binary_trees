@@ -40,24 +40,22 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int left;
-	int right;
 
 	if (tree == NULL)
 		return (0);
 
-	if (tree->left)
-		left = binary_tree_height(tree->left) + 1;
-	else
-		left = 0;
+	if (tree->left == NULL && tree->right == NULL)
+		return (1); /*if leaves are perfect, return 1*/
 
-	if (tree->right)
-		right = binary_tree_height(tree->right) + 1;
-	else
-		right = 0;
+	if (tree->left == NULL || tree->right == NULL)
+		return (0); /*if only 1 child is missing, not perfect, returns 0*/
 
-	if (left == right)
+	if (binary_tree_height(tree->left) == binary_tree_height(tree->right))
+	{ /*if both heights are the same and...*/
+
+		/*... if both children are perfect, returns 1*/
+	if (binary_tree_is_perfect(tree->left) && binary_tree_is_perfect(tree->right))
 		return (1);
-	else
-		return (0);
+	}
+		return (0); /*else returns 0*/
 }
