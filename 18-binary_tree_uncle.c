@@ -21,22 +21,8 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	parent = node->parent;
 	g_parent = parent->parent;
 
-	if (parent->n == g_parent->right->n)
-		return (g_parent->left);
+	if (g_parent->left == parent)
+		return (g_parent->right);
 
-	if (node->parent == g_parent->left)
-	{
-		if (g_parent->right == NULL)
-			return (NULL);
-	}
-
-	if (node->parent == g_parent->right)
-{
-	if (g_parent->left == NULL)
-		return (NULL);
-}
-
-
-	return (g_parent->right);
-
+	return (g_parent->left);
 }
